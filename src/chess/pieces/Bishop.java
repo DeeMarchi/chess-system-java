@@ -14,7 +14,6 @@ public class Bishop extends ChessPiece {
     @Override
     public boolean[][] possibleMoves() {
         boolean[][] matrix = new boolean[getBoard().getRows()][getBoard().getColumns()];
-
         Position p = new Position(0, 0);
 
         // northwest
@@ -26,7 +25,6 @@ public class Bishop extends ChessPiece {
         if (getBoard().positionExists(p) && isThereOpponentPiece(p)) {
             matrix[p.getRow()][p.getColumn()] = true;
         }
-
         // northeast
         p.setValues(position.getRow() - 1, position.getColumn() + 1);
         while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
@@ -36,7 +34,6 @@ public class Bishop extends ChessPiece {
         if (getBoard().positionExists(p) && isThereOpponentPiece(p)) {
             matrix[p.getRow()][p.getColumn()] = true;
         }
-
         // southeast
         p.setValues(position.getRow() + 1, position.getColumn() + 1);
         while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
@@ -46,7 +43,6 @@ public class Bishop extends ChessPiece {
         if (getBoard().positionExists(p) && isThereOpponentPiece(p)) {
             matrix[p.getRow()][p.getColumn()] = true;
         }
-
         // southwest
         p.setValues(position.getRow() + 1, position.getColumn() - 1);
         while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
